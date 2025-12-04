@@ -1,27 +1,12 @@
-// Main JavaScript File
+// Main JavaScript File - Update initialization
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Matcha Haven Shop loaded');
     
-    // Initialize cart button (cart.js will handle this)
-    const cartBtn = document.getElementById('cart-btn');
-    if (cartBtn) {
-        cartBtn.addEventListener('click', openCartModal);
-    }
+    // Cart and checkout are now initialized in cart.js
+    // Slideshow is initialized in slideshow.js
+    // Customization is initialized in customization.js
     
-    // Initialize slideshow (slideshow.js handles this)
-    // Initialize customization (customization.js handles this)
-    // Everything else is handled by their respective files
+    // Everything is now modularized and initialized in their respective files
 });
-
-// Placeholder functions (will be implemented in cart.js)
-function openCartModal() {
-    console.log('Opening cart modal');
-    // Will be implemented in cart.js
-}
-
-function addToCart(item) {
-    console.log('Adding to cart:', item);
-    // Will be implemented in cart.js
-}

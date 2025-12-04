@@ -90,12 +90,19 @@
         <section id="products" class="products-section">
             <h1 class="section-title">Our Premium Matcha Selection</h1>
             
+            <!-- Category Filter -->
+            <div class="simple-filters">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Drinks</button>
+                <button class="filter-btn" onclick="filterProducts('popular')">Popular</button>
+                <button class="filter-btn" onclick="filterProducts('new')">New</button>
+            </div>
+            
             <div class="products-grid" id="products-grid">
                 <!-- Product cards will be dynamically added here -->
                 <!-- Template for product card -->
                 <div class="product-card" data-product-id="1">
                     <div class="product-image">
-                        <img src="assets/images/products/matcha-latte.png" alt="Matcha Latte" class="product-img">
+                        <img src="images/products/matcha-latte.png" alt="Matcha Latte" class="product-img">
                         <div class="product-badge">Bestseller</div>
                     </div>
                     <div class="product-info">
@@ -110,13 +117,13 @@
 
                 <div class="product-card" data-product-id="2">
                     <div class="product-image">
-                        <img src="assets/images/products/matcha-frappuccino.png" alt="Matcha Frappuccino" class="product-img">
+                        <img src="images/products/mango-matcha.png" alt="Mango Matcha" class="product-img">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Matcha Frappuccino</h3>
+                        <h3 class="product-name">Mango Matcha</h3>
                         <p class="product-desc">Iced blended matcha with milk and whipped cream</p>
-                        <div class="product-price">₱200</div>
-                        <button class="add-to-cart-btn" data-product="Matcha Frappuccino" data-price="200">
+                        <div class="product-price">₱220</div>
+                        <button class="add-to-cart-btn" data-product="Mango Matcha" data-price="220">
                             <i class="fas fa-plus-circle"></i> Customize & Order
                         </button>
                     </div>
@@ -124,14 +131,14 @@
 
                 <div class="product-card" data-product-id="3">
                     <div class="product-image">
-                        <img src="assets/images/products/matcha-smoothie.png" alt="Matcha Smoothie" class="product-img">
+                        <img src="images/products/matcha-almond.png" alt="Matcha Almond" class="product-img">
                         <div class="product-badge">New</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Matcha Smoothie</h3>
-                        <p class="product-desc">Refreshing matcha blended with fruits and yogurt</p>
+                        <h3 class="product-name">Matcha Almond</h3>
+                        <p class="product-desc">Nutty smoothness with a matcha twist.</p>
                         <div class="product-price">₱220</div>
-                        <button class="add-to-cart-btn" data-product="Matcha Smoothie" data-price="220">
+                        <button class="add-to-cart-btn" data-product="Matcha Almond" data-price="220">
                             <i class="fas fa-plus-circle"></i> Customize & Order
                         </button>
                     </div>
@@ -139,13 +146,13 @@
 
                 <div class="product-card" data-product-id="4">
                     <div class="product-image">
-                        <img src="assets/images/products/matcha-iced.png" alt="Iced Matcha" class="product-img">
+                        <img src="images/products/matcha-berry.png" alt="Matcha Berry" class="product-img">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Iced Matcha</h3>
-                        <p class="product-desc">Pure matcha over ice, simple and refreshing</p>
-                        <div class="product-price">₱160</div>
-                        <button class="add-to-cart-btn" data-product="Iced Matcha" data-price="160">
+                        <h3 class="product-name">Matcha Berry</h3>
+                        <p class="product-desc">Sweet berries brighten bold matcha notes.</p>
+                        <div class="product-price">₱200</div>
+                        <button class="add-to-cart-btn" data-product="Iced Matcha" data-price="200">
                             <i class="fas fa-plus-circle"></i> Customize & Order
                         </button>
                     </div>
@@ -153,13 +160,13 @@
 
                 <div class="product-card" data-product-id="5">
                     <div class="product-image">
-                        <img src="assets/images/products/matcha-milktea.png" alt="Matcha Milk Tea" class="product-img">
+                        <img src="images/products/matcha-cold-foam.png" alt="Matcha Cold Foam" class="product-img">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Matcha Milk Tea</h3>
-                        <p class="product-desc">Classic milk tea with matcha twist</p>
-                        <div class="product-price">₱190</div>
-                        <button class="add-to-cart-btn" data-product="Matcha Milk Tea" data-price="190">
+                        <h3 class="product-name">Matcha Cold Foam</h3>
+                        <p class="product-desc">Light, airy foam with a cool green kick.</p>
+                        <div class="product-price">₱230</div>
+                        <button class="add-to-cart-btn" data-product="Matcha Cold Foam" data-price="230">
                             <i class="fas fa-plus-circle"></i> Customize & Order
                         </button>
                     </div>
@@ -167,14 +174,56 @@
 
                 <div class="product-card" data-product-id="6">
                     <div class="product-image">
-                        <img src="assets/images/products/matcha-espresso.png" alt="Matcha Espresso Fusion" class="product-img">
+                        <img src="images/products/matcha-espresso.png" alt="Matcha Espresso" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Matcha Espresso</h3>
+                        <p class="product-desc">Bold coffee energy fused with matcha calm.</p>
+                        <div class="product-price">₱190</div>
+                        <button class="add-to-cart-btn" data-product="Matcha Espresso" data-price="190">
+                            <i class="fas fa-plus-circle"></i> Customize & Order
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="7">
+                    <div class="product-image">
+                        <img src="images/products/matcha-oreo.png" alt="Matcha Oreo" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Matcha Oreo</h3>
+                        <p class="product-desc">Crunchy cookie indulgence swirled in matcha magic.</p>
+                        <div class="product-price">₱200</div>
+                        <button class="add-to-cart-btn" data-product="Matcha Oreo" data-price="200">
+                            <i class="fas fa-plus-circle"></i> Customize & Order
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="8">
+                    <div class="product-image">
+                        <img src="images/products/pistachio-matcha.png" alt="Pistachio Matcha" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Pistachio Matcha</h3>
+                        <p class="product-desc">Nutty elegance blended with vibrant green tea.</p>
+                        <div class="product-price">₱220</div>
+                        <button class="add-to-cart-btn" data-product="Pistachio Matcha" data-price="220">
+                            <i class="fas fa-plus-circle"></i> Customize & Order
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="9">
+                    <div class="product-image">
+                        <img src="images/products/pistachio-choco-matcha.png" alt="Pistachio Choco Matcha" class="product-img">
                         <div class="product-badge">Limited</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Matcha Espresso Fusion</h3>
-                        <p class="product-desc">Bold espresso meets smooth matcha</p>
+                        <h3 class="product-name">Pistachio Choco Matcha</h3>
+                        <p class="product-desc">Chocolate richness, pistachio charm, and matcha harmony.</p>
                         <div class="product-price">₱240</div>
-                        <button class="add-to-cart-btn" data-product="Matcha Espresso Fusion" data-price="240">
+                        <button class="add-to-cart-btn" data-product="Pistachio Choco Matcha" data-price="240">
                             <i class="fas fa-plus-circle"></i> Customize & Order
                         </button>
                     </div>
@@ -276,7 +325,7 @@
 
                 <div class="customization-section">
                     <h3>4. Special Instructions</h3>
-                    <textarea id="special-instructions" placeholder="Any special requests? (e.g., extra hot, less ice, etc.)" rows="3"></textarea>
+                    <textarea id="special-instructions" placeholder="Any special requests? (e.g. less ice, etc.)" rows="3"></textarea>
                 </div>
 
                 <div class="price-summary">
@@ -303,15 +352,199 @@
     </div>
 
     <!-- Shopping Cart Modal -->
-    <div class="modal-overlay" id="cart-modal">
-        <!-- Will be implemented later -->
+<div class="modal-overlay" id="cart-modal">
+    <div class="modal-content cart-modal">
+        <div class="modal-header">
+            <h2>Your Matcha Cart</h2>
+            <button class="close-modal" id="close-cart-modal">&times;</button>
+        </div>
+        
+        <div class="modal-body">
+            <!-- Empty Cart State -->
+            <div class="empty-cart" id="empty-cart">
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <h3>Your cart is empty</h3>
+                <p>Add some delicious matcha drinks to get started!</p>
+                <button class="btn-secondary" id="continue-shopping">Continue Shopping</button>
+            </div>
+            
+            <!-- Cart Items -->
+            <div class="cart-items" id="cart-items">
+                <div class="cart-items-list" id="cart-items-list">
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">₱0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Service Charge:</span>
+                        <span>₱20</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="cart-total">₱0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cart Footer -->
+        <div class="modal-footer cart-footer">
+            <div class="cart-footer-content">
+                <button class="btn-secondary" id="close-cart-btn">Continue Shopping</button>
+                <button class="btn-primary" id="checkout-btn" disabled>Proceed to Checkout</button>
+            </div>
+        </div>
     </div>
+</div>
+
+<!-- Checkout Modal -->
+<div class="modal-overlay" id="checkout-modal">
+    <div class="modal-content checkout-modal">
+        <div class="modal-header">
+            <h2>Checkout</h2>
+            <button class="close-modal" id="close-checkout-modal">&times;</button>
+        </div>
+        
+        <div class="modal-body">
+            <div class="checkout-steps">
+                <div class="step active" data-step="1">
+                    <span class="step-number">1</span>
+                    <span class="step-label">Order Summary</span>
+                </div>
+                <div class="step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span class="step-label">Payment</span>
+                </div>
+                <div class="step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span class="step-label">Confirmation</span>
+                </div>
+            </div>
+            
+            <!-- Step 1: Order Summary -->
+            <div class="checkout-step" id="step-1">
+                <h3>Review Your Order</h3>
+                <div class="checkout-items" id="checkout-items">
+                    <!-- Items will be populated from cart -->
+                </div>
+                <div class="checkout-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="checkout-subtotal">₱0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Service Charge:</span>
+                        <span>₱20</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total Amount:</span>
+                        <span id="checkout-total">₱0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 2: Payment -->
+            <div class="checkout-step" id="step-2" style="display: none;">
+                <h3>Payment Method</h3>
+                <div class="payment-methods">
+                    <label class="payment-method">
+                        <input type="radio" name="payment" value="cash" checked>
+                        <div class="payment-content">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div>
+                                <h4>Cash on Delivery</h4>
+                                <p>Pay when you receive your order</p>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="payment-method">
+                        <input type="radio" name="payment" value="gcash">
+                        <div class="payment-content">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>GCash</h4>
+                                <p>Pay via GCash mobile app</p>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="payment-method">
+                        <input type="radio" name="payment" value="card">
+                        <div class="payment-content">
+                            <i class="fas fa-credit-card"></i>
+                            <div>
+                                <h4>Credit/Debit Card</h4>
+                                <p>Pay with your card</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <div class="customer-info">
+                    <h3>Delivery Information</h3>
+                    <div class="form-group">
+                        <label for="customer-name">Full Name</label>
+                        <input type="text" id="customer-name" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Phone Number</label>
+                        <input type="tel" id="customer-phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-address">Delivery Address</label>
+                        <textarea id="customer-address" placeholder="Enter your complete address" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="special-notes">Special Instructions</label>
+                        <textarea id="special-notes" placeholder="Any special delivery instructions?" rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 3: Confirmation -->
+            <div class="checkout-step" id="step-3" style="display: none;">
+                <div class="confirmation-content">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Order Confirmed!</h3>
+                    <p class="order-number">Order #<span id="order-number">MH001</span></p>
+                    <div class="confirmation-details">
+                        <p>Your matcha order has been received and is being prepared.</p>
+                        <p>Estimated delivery time: <strong>30-45 minutes</strong></p>
+                        <p>You will receive a confirmation SMS shortly.</p>
+                    </div>
+                    <div class="order-summary-confirm">
+                        <h4>Order Summary:</h4>
+                        <div id="final-order-summary">
+                            <!-- Final summary will be shown here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-footer checkout-footer">
+            <button class="btn-secondary" id="prev-step-btn" style="display: none;">Back</button>
+            <button class="btn-primary" id="next-step-btn">Proceed to Payment</button>
+            <button class="btn-primary" id="confirm-order-btn" style="display: none;">Confirm Order</button>
+            <button class="btn-secondary" id="new-order-btn" style="display: none;">Place New Order</button>
+        </div>
+    </div>
+</div>
 
     <!-- JavaScript files -->
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
+    <script src="js/products-loader.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/slideshow.js"></script>
-    <script src="js/customization.js"></script> <!-- New file -->
+    <script src="js/customization.js"></script> 
 </body>
 </html>

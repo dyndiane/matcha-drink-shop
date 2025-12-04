@@ -78,7 +78,7 @@
             "category": "Cold Drinks",
             "image": "pistachio-matcha.png",
             "popular": false,
-            "tags": ["Pistachio", "Nutty", "Elegant"]
+            "tags": ["Pistachio", "Nutty", "Elegant", "Popular"]
         },
         {
             "id": 9,

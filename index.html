@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Haven - Premium Matcha Drinks</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo on the left -->
+            <div class="logo-container">
+                <a href="#" class="logo-link">
+                    <img src="images/logo/matcha-logo.png" alt="Matcha Haven Logo" class="logo-img">
+                    <span class="logo-text">Matcha Haven</span>
+                </a>
+            </div>
+
+            <!-- Cart icon on the right -->
+            <div class="cart-container">
+                <button class="cart-btn" id="cart-btn" aria-label="Open shopping cart">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slideshow Section -->
+    <section class="slideshow-section">
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="slide fade">
+                <img src="images/slideshow/matcha-slide1.jpg" alt="Premium Matcha Latte">
+                <div class="slide-text">
+                    <h2>Artisanal Matcha Creations</h2>
+                    <p>Handcrafted with ceremonial-grade matcha</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide fade">
+                <img src="images/slideshow/matcha-slide2.jpg" alt="Matcha">
+                <div class="slide-text">
+                    <h2>Refreshing Matcha Blends</h2>
+                    <p>Perfectly balanced sweetness and umami</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide fade">
+                <img src="images/slideshow/matcha-slide3.jpg" alt="Matcha Smoothie Bowl">
+                <div class="slide-text">
+                    <h2>Healthy & Energizing</h2>
+                    <p>Packed with antioxidants and natural energy</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="slide fade">
+                <img src="images/slideshow/matcha-slide4.jpg" alt="Matcha Smoothie Bowl">
+                <div class="slide-text">
+                    <h2>Healthy & Energizing</h2>
+                    <p>Packed with antioxidants and natural energy</p>
+                </div>
+            </div>
+
+            <!-- Navigation dots -->
+            <div class="dots-container">
+                <span class="dot" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+            </div>
+            
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <main>
+        <!-- Products section -->
+        <section id="products" class="products-section">
+            <h1 class="section-title">Our Premium Matcha Selection</h1>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Product cards will be dynamically added here -->
+                <!-- Template for product card -->
+                <div class="product-card" data-product-id="1">
+                    <div class="product-image">
+                        <img src="assets/images/products/matcha-latte.png" alt="Matcha Latte" class="product-img">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Matcha Latte</h3>
+                        <p class="product-desc">Smooth and creamy ceremonial-grade matcha with steamed milk</p>
+                        <div class="product-price">₱180</div>
+                        <button class="add-to-cart-btn" data-product="Matcha Latte" data-price="180">
+                            <i class="fas fa-plus-circle"></i> Customize & Order
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="2">
+                    <div class="product-image">
+                        <img src="assets/images/products/matcha-frappuccino.png" alt="Matcha Frappuccino" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Matcha Frappuccino</h3>
+                        <p class="product-desc">Iced blended matcha with milk and whipped cream</p>
+                        <div class="product-price">₱200</div>
+                        <button class="add-to-cart-btn" data-product="Matcha Frappuccino" data-price="200">
+                            <i class="fas fa-plus-circle"></i> Customize & Order
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="3">
+                    <div class="product-image">
+                        <img src="assets/images/products/matcha-smoothie.png" alt="Matcha Smoothie" class="product-img">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Matcha Smoothie</h3>
+                        <p class="product-desc">Refreshing matcha blended with fruits and yogurt</p>
+                        <div class="product-price">₱220</div>
+                        <button class="add-to-cart-btn" data-product="Matcha Smoothie" data-price="220">
+                            <i class="fas fa-plus-circle"></i> Customize & Order
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="4">
+                    <div class="product-image">
+                        <img src="assets/images/products/matcha-iced.png" alt="Iced Matcha" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Iced Matcha</h3>
+                        <p class="product-desc">Pure matcha over ice, simple and refreshing</p>
+                        <div class="product-price">₱160</div>
+                        <button class="add-to-cart-btn" data-product="Iced Matcha" data-price="160">
+                            <i class="fas fa-plus-circle"></i> Customize & Order
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="5">
+                    <div class="product-image">
+                        <img src="assets/images/products/matcha-milktea.png" alt="Matcha Milk Tea" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Matcha Milk Tea</h3>
+                        <p class="product-desc">Classic milk tea with matcha twist</p>
+                        <div class="product-price">₱190</div>
+                        <button class="add-to-cart-btn" data-product="Matcha Milk Tea" data-price="190">
+                            <i class="fas fa-plus-circle"></i> Customize & Order
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="6">
+                    <div class="product-image">
+                        <img src="assets/images/products/matcha-espresso.png" alt="Matcha Espresso Fusion" class="product-img">
+                        <div class="product-badge">Limited</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Matcha Espresso Fusion</h3>
+                        <p class="product-desc">Bold espresso meets smooth matcha</p>
+                        <div class="product-price">₱240</div>
+                        <button class="add-to-cart-btn" data-product="Matcha Espresso Fusion" data-price="240">
+                            <i class="fas fa-plus-circle"></i> Customize & Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Customization Modal -->
+    <div class="modal-overlay" id="customization-modal">
+        <div class="modal-content customization-modal">
+            <div class="modal-header">
+                <h2 id="customize-product-name">Customize Your Order</h2>
+                <button class="close-modal" id="close-customize-modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="product-summary">
+                    <img id="customize-product-image" src="" alt="Product Image">
+                    <div>
+                        <h3 id="summary-product-name">Matcha Latte</h3>
+                        <p id="summary-product-price">Base Price: ₱180</p>
+                    </div>
+                </div>
+
+                <!-- Customization Options -->
+                <div class="customization-section">
+                    <h3>1. Choose Your Milk</h3>
+                    <div class="option-group" id="milk-options">
+                        <label class="option-item">
+                            <input type="radio" name="milk" value="dairy" checked>
+                            <span class="option-label">Dairy Milk</span>
+                            <span class="option-price">+₱0</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="milk" value="non-dairy">
+                            <span class="option-label">Non-Dairy (Almond/Oat)</span>
+                            <span class="option-price">+₱20</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="customization-section">
+                    <h3>2. Sugar Level</h3>
+                    <div class="option-group" id="sugar-options">
+                        <label class="option-item">
+                            <input type="radio" name="sugar" value="0" checked>
+                            <span class="option-label">0% Sugar</span>
+                            <span class="option-price">+₱0</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="sugar" value="10">
+                            <span class="option-label">10% Sugar</span>
+                            <span class="option-price">+₱0</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="sugar" value="20">
+                            <span class="option-label">20% Sugar</span>
+                            <span class="option-price">+₱0</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="sugar" value="50">
+                            <span class="option-label">50% Sugar</span>
+                            <span class="option-price">+₱0</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="sugar" value="70">
+                            <span class="option-label">70% Sugar</span>
+                            <span class="option-price">+₱0</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="sugar" value="100">
+                            <span class="option-label">100% Sugar</span>
+                            <span class="option-price">+₱0</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="customization-section">
+                    <h3>3. Add-ons (₱30 each)</h3>
+                    <div class="option-group" id="addon-options">
+                        <label class="option-item checkbox">
+                            <input type="checkbox" name="addon" value="nata">
+                            <span class="option-label">Nata de Coco</span>
+                            <span class="option-price">+₱30</span>
+                        </label>
+                        <label class="option-item checkbox">
+                            <input type="checkbox" name="addon" value="boba">
+                            <span class="option-label">Boba Pearls</span>
+                            <span class="option-price">+₱30</span>
+                        </label>
+                        <label class="option-item checkbox">
+                            <input type="checkbox" name="addon" value="popping-boba">
+                            <span class="option-label">Popping Boba</span>
+                            <span class="option-price">+₱30</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="customization-section">
+                    <h3>4. Special Instructions</h3>
+                    <textarea id="special-instructions" placeholder="Any special requests? (e.g., extra hot, less ice, etc.)" rows="3"></textarea>
+                </div>
+
+                <div class="price-summary">
+                    <div class="price-row">
+                        <span>Base Price:</span>
+                        <span id="base-price">₱180</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Extra Charges:</span>
+                        <span id="extra-charges">₱0</span>
+                    </div>
+                    <div class="price-row total">
+                        <span>Total:</span>
+                        <span id="total-price">₱180</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancel-customize">Cancel</button>
+                <button class="btn-primary" id="add-to-cart-final">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div class="modal-overlay" id="cart-modal">
+        <!-- Will be implemented later -->
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/slideshow.js"></script>
+    <script src="js/customization.js"></script> <!-- New file -->
+</body>
+</html>

@@ -1,0 +1,290 @@
+/* ======================
+   CUSTOMIZATION MODAL
+======================= */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.customization-modal {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem 0.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.modal-header h2 {
+    color: #454126;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #666;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-modal:hover {
+    color: #454126;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Product Summary */
+.product-summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.product-summary img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #d4b483;
+}
+
+.product-summary h3 {
+    margin: 0 0 0.5rem 0;
+    color: #454126;
+    font-size: 1.3rem;
+}
+
+#summary-product-price {
+    color: #d4b483;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Customization Sections */
+.customization-section {
+    margin-bottom: 1.5rem;
+}
+
+.customization-section h3 {
+    color: #454126;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.customization-section h3:before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #d4b483;
+    border-radius: 50%;
+}
+
+/* Option Groups */
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-item:hover {
+    border-color: #d4b483;
+    background: #fcf9f3;
+}
+
+.option-item.selected {
+    border-color: #454126;
+    background: #f5f3e9;
+}
+
+.option-item input[type="radio"],
+.option-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.option-label {
+    flex-grow: 1;
+    color: #333;
+    font-weight: 500;
+}
+
+.option-price {
+    color: #d4b483;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Special Instructions */
+#special-instructions {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+    background: #f9f9f9;
+}
+
+#special-instructions:focus {
+    outline: none;
+    border-color: #d4b483;
+    background: white;
+}
+
+/* Price Summary */
+.price-summary {
+    background: #f9f7f0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    color: #666;
+}
+
+.price-row.total {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #454126;
+    border-top: 2px solid #e0e0e0;
+    padding-top: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+/* Modal Footer */
+.modal-footer {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-top: 2px solid #f0f0f0;
+    border-radius: 0 0 15px 15px;
+}
+
+.btn-primary, .btn-secondary {
+    flex: 1;
+    padding: 0.9rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: #454126;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5a5535;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: white;
+    color: #454126;
+    border: 2px solid #454126;
+}
+
+.btn-secondary:hover {
+    background: #f5f5f5;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .customization-modal {
+        max-width: 95%;
+        max-height: 95vh;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .product-summary img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-overlay {
+        padding: 10px;
+    }
+    
+    .customization-modal {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    
+    .modal-body {
+        padding: 1rem;
+    }
+    
+    .product-summary {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -5,90 +5,66 @@
             "name": "Matcha Latte",
             "description": "Smooth and creamy ceremonial-grade matcha with steamed milk",
             "price": 180,
-            "category": "Cold Drinks",
             "image": "matcha-latte.png",
-            "popular": true,
-            "tags": ["Bestseller", "Classic", "Creamy"]
+            "badge": "Bestseller"
         },
         {
             "id": 2,
             "name": "Mango Matcha",
             "description": "Iced blended matcha with milk and whipped cream",
             "price": 220,
-            "category": "Cold Drinks",
-            "image": "mango-matcha.png",
-            "popular": false,
-            "tags": ["Fruity", "Sweet", "Refreshing"]
+            "image": "mango-matcha.png"
         },
         {
             "id": 3,
             "name": "Matcha Almond",
             "description": "Nutty smoothness with a matcha twist.",
             "price": 220,
-            "category": "Cold Drinks",
             "image": "matcha-almond.png",
-            "popular": false,
-            "tags": ["Nutty", "Smooth", "New"]
+            "badge": "New"
         },
         {
             "id": 4,
             "name": "Matcha Berry",
             "description": "Sweet berries brighten bold matcha notes.",
             "price": 200,
-            "category": "Cold Drinks",
-            "image": "matcha-berry.png",
-            "popular": false,
-            "tags": ["Berry", "Sweet", "Fruity"]
+            "image": "matcha-berry.png"
         },
         {
             "id": 5,
             "name": "Matcha Cold Foam",
             "description": "Light, airy foam with a cool green kick.",
             "price": 230,
-            "category": "Cold Drinks",
-            "image": "matcha-cold-foam.png",
-            "popular": true,
-            "tags": ["Foamy", "Light", "Refreshing"]
+            "image": "matcha-cold-foam.png"
         },
         {
             "id": 6,
             "name": "Matcha Espresso",
             "description": "Bold coffee energy fused with matcha calm.",
             "price": 190,
-            "category": "Cold Drinks",
-            "image": "matcha-espresso.png",
-            "popular": false,
-            "tags": ["Coffee", "Bold", "Energetic"]
+            "image": "matcha-espresso.png"
         },
         {
             "id": 7,
             "name": "Matcha Oreo",
             "description": "Crunchy cookie indulgence swirled in matcha magic.",
             "price": 200,
-            "category": "Cold Drinks",
-            "image": "matcha-oreo.png",
-            "popular": true,
-            "tags": ["Cookie", "Crunchy", "Indulgent"]
+            "image": "matcha-oreo.png"
         },
         {
             "id": 8,
             "name": "Pistachio Matcha",
             "description": "Nutty elegance blended with vibrant green tea.",
             "price": 220,
-            "category": "Cold Drinks",
-            "image": "pistachio-matcha.png",
-            "popular": false,
-            "tags": ["Pistachio", "Nutty", "Elegant"]
+            "image": "pistachio-matcha.png"
         },
         {
             "id": 9,
             "name": "Pistachio Choco Matcha",
             "description": "Chocolate richness, pistachio charm, and matcha harmony.",
             "price": 240,
-            "category": "Cold Drinks",
             "image": "pistachio-choco-matcha.png",
-            "popular": false,
-            "tags": ["Pistachio", "Chocolate", "Rich", "Limited"]
+            "badge": "Limited"
         }
     ]
 }

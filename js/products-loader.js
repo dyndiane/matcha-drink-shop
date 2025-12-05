@@ -1,122 +1,77 @@
-// Simple Products Loader - Only for JSON requirement
-// This doesn't replace your HTML, just loads the data for reference
+// Products Loader - Loads from JSON and creates HTML
 
-let productsData = [];
-
-// Load products from JSON
 async function loadProducts() {
     try {
-        const response = await fetch('../data/products.json');
-        if (!response.ok) throw new Error('Failed to load products');
-        
+        // Load products from JSON
+        const response = await fetch('data/products.json');
         const data = await response.json();
-        productsData = data.products;
-        console.log('Products loaded from JSON:', productsData);
+        const products = data.products;
         
-        // Optional: You can use this data for other features
-        // like search, filtering, or analytics
-        return productsData;
+        console.log(`Loaded ${products.length} products from JSON`);
+        
+        // Render products to the page
+        renderProducts(products);
+        
+        // Initialize customization buttons
+        setTimeout(initCustomization, 100);
+        
     } catch (error) {
-        console.error('Error loading products JSON:', error);
-        // Fallback: Extract data from existing HTML
-        extractProductsFromHTML();
-        return productsData;
+        console.error('Error loading products:', error);
+        showError();
     }
 }
 
-// Filter function
-function filterProducts(filter) {
-    const productCards = document.querySelectorAll('.product-card');
-    const filterButtons = document.querySelectorAll('.filter-btn');
+function renderProducts(products) {
+    const productsGrid = document.getElementById('products-grid');
     
-    // Update active button
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    // Clear loading message if any
+    productsGrid.innerHTML = '';
     
-    // Show/hide products based on filter
-    productCards.forEach(card => {
-        const badge = card.querySelector('.product-badge');
-        
-        switch(filter) {
-            case 'all':
-                card.style.display = 'block';
-                break;
-            case 'popular':
-                if (badge && badge.textContent.includes('Bestseller')) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-                break;
-            case 'new':
-                if (badge && badge.textContent.includes('New')) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-                break;
-            default:
-                card.style.display = 'block';
-        }
+    // Create product cards
+    products.forEach(product => {
+        const productCard = createProductCard(product);
+        productsGrid.appendChild(productCard);
     });
 }
 
-// Extract product data from existing HTML (fallback)
-function extractProductsFromHTML() {
-    const productCards = document.querySelectorAll('.product-card');
-    productsData = [];
+function createProductCard(product) {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.dataset.productId = product.id;
     
-    productCards.forEach(card => {
-        const id = parseInt(card.dataset.productId) || 0;
-        const name = card.querySelector('.product-name').textContent;
-        const description = card.querySelector('.product-desc').textContent;
-        const price = parseInt(card.querySelector('.product-price').textContent.replace('₱', ''));
-        const image = card.querySelector('.product-img').src.split('/').pop();
-        
-        // Check if it's popular (has badge)
-        const badge = card.querySelector('.product-badge');
-        const popular = badge ? badge.textContent.includes('Bestseller') || badge.textContent.includes('Popular') : false;
-        
-        productsData.push({
-            id,
-            name,
-            description,
-            price,
-            category: "Cold Drinks", // All your products are cold drinks
-            image,
-            popular,
-            tags: [] // Can be empty, or extract from somewhere
-        });
-    });
+    // Create badge HTML if exists
+    const badgeHTML = product.badge 
+        ? `<div class="product-badge">${product.badge}</div>` 
+        : '';
     
-    console.log('Products extracted from HTML:', productsData);
-}
-
-// Get product by ID
-function getProductById(id) {
-    return productsData.find(product => product.id === id);
-}
-
-// Get product by name
-function getProductByName(name) {
-    return productsData.find(product => product.name === name);
-}
-
-// Get all products
-function getAllProducts() {
-    return [...productsData];
-}
-
-// Search products (optional feature)
-function searchProducts(query) {
-    if (!query.trim()) return productsData;
+    card.innerHTML = `
+        <div class="product-image">
+            <img src="images/products/${product.image}" alt="${product.name}" class="product-img">
+            ${badgeHTML}
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-desc">${product.description}</p>
+            <div class="product-price">₱${product.price}</div>
+            <button class="add-to-cart-btn" data-product="${product.name}" data-price="${product.price}">
+                <i class="fas fa-plus-circle"></i> Customize & Order
+            </button>
+        </div>
+    `;
     
-    const searchTerm = query.toLowerCase();
-    return productsData.filter(product => 
-        product.name.toLowerCase().includes(searchTerm) ||
-        product.description.toLowerCase().includes(searchTerm)
-    );
+    return card;
 }
 
-// Initialize when DOM is loaded
+function showError() {
+    const productsGrid = document.getElementById('products-grid');
+    productsGrid.innerHTML = `
+        <div class="error-message">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>Products Failed to Load</h3>
+            <p>Please refresh the page or check your connection</p>
+        </div>
+    `;
+}
+
+// Initialize when page loads
 document.addEventListener('DOMContentLoaded', loadProducts);

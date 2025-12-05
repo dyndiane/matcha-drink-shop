@@ -16,7 +16,8 @@ function initCustomization() {
             const productName = this.getAttribute('data-product');
             const productPrice = parseInt(this.getAttribute('data-price'));
             const productCard = this.closest('.product-card');
-            const productImage = productCard.querySelector('.product-img').src;
+            const productImg = productCard.querySelector('.product-img');
+            const productImage = productImg ? productImg.src : 'images/products/default-matcha.png';
             
             openCustomizationModal(productName, productPrice, productImage);
         });

@@ -815,3 +815,28 @@ main {
         font-size: 0.85rem;
     }
 }
+
+/* Error State */
+.error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    background: #fff8f8;
+    border-radius: 10px;
+    border: 2px dashed #ff6b6b;
+}
+
+.error-message i {
+    font-size: 3rem;
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+}
+
+.error-message h3 {
+    color: #d63031;
+    margin-bottom: 0.5rem;
+}
+
+.error-message p {
+    color: #666;
+}
